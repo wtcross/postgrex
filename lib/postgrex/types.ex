@@ -100,7 +100,7 @@ defmodule Postgrex.Types do
       end
 
     """
-    SELECT t.oid, t.typname, t.typsend, t.typreceive, t.typoutput, t.typinput,
+    SELECT t.oid, t.typname, t.typname || 'send', t.typname || 'recv', t.typname || 'out', t.typname || 'in',
            #{typelem}, #{rngsubtype}, #{comp_oids}
     FROM pg_type AS t
     #{join_domain}
